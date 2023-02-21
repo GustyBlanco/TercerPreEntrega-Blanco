@@ -1,0 +1,14 @@
+
+{% load static %} 
+
+<p>Estamos buscando el kinesiologo cuyo apellido es: {{apellido}} </p>
+    {% if kinesiologos %} 
+    <ul>
+        {% for kinesiologo in kinesiologos %}
+            <li>{{kinesiologo.nombre}}</li>
+            <li>{{kinesiologo.apellido}}</li>
+            <li>{{kinesiologo.comision}}</li>
+            <li>{{kinesiologo.mail}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}

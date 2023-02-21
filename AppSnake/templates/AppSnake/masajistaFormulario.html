@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<h1>Aquí se registran los masajistas que deseen colaborar</h1>
+{% if miFormulario.errors %} 
+<p style="color:red;">Los datos ingresados son incorrectos, intente de nuevo</p> 
+{% endif %}
+<form action="" method="POST">
+    {% csrf_token %}
+
+    
+
+    {{ miFormulario }}
+
+ 
+
+    <input type="submit", value="Enviar">
+</form>

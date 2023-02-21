@@ -1,0 +1,14 @@
+
+{% load static %} 
+
+<p>Estamos buscando el masajista cuya credencial es: {{credencial}} </p>
+    {% if medicos %} 
+    <ul>
+        {% for masajista in masajistas %}
+            <li>{{masajista.nombre}}</li>
+            <li>{{masajista.apellido}}</li>
+            <li>{{masajista.credencial}}</li>
+            <li>{{masajista.interno}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
