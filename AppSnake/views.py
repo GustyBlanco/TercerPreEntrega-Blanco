@@ -38,7 +38,7 @@ def masajistaFormulario(request):
     return render(request,'AppSnake/masajistaFormulario.html',{'miFormulario':miFormulario})
 
 def masajistaBusqueda(request):
-    return render(request,'AppSnake/masajistaBusqueda.html',{"masajista":Masajistas})
+    return render(request,'AppSnake/masajistaBusqueda.html',{"masajista":masajista})
 
 def buscar(request):
     if request.GET["credencial"]:
@@ -46,7 +46,7 @@ def buscar(request):
         credencial=request.GET["credencial"]
         masajista=Masajistas.objects.filter(credencial__icontains=credencial)
 
-        return render(request,"AppSnake/resultadoBusqueda.html",{"masajistas":Masajistas,"credencial":credencial})
+        return render(request,"AppSnake/resultadoBusqueda.html",{"masajistas":masajista,"credencial":credencial})
     else:
         respuesta='No enviaste datos'
        
